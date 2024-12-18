@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "fa8132e4-0258-482d-a1f5-927f979d45b2",
+		"name": "SL Railway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25682308"
+	},
+	"item": [
+		{
+			"name": "Add Train Location",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"trainId\": \"TRN001\",\r\n  \"location\": {\r\n    \"latitude\": 6.933855530741783, \r\n    \"longitude\": 79.85018042392976\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trains/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trains",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Train Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trains/TRN001/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trains",
+						"TRN001",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Train locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trains/latest-locations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trains",
+						"latest-locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trains/location/history?trainId=TRN001&startDate=2024-08-01&endDate=2024-08-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trains",
+						"location",
+						"history"
+					],
+					"query": [
+						{
+							"key": "trainId",
+							"value": "TRN001"
+						},
+						{
+							"key": "startDate",
+							"value": "2024-08-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-08-08"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
